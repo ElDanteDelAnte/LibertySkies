@@ -4,7 +4,7 @@
 class Point;
 class Sphere;
 
-class Race;
+struct Race;
 class Character;
 
 #endif

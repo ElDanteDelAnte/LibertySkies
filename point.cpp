@@ -1,42 +1,42 @@
 #include "point.h"
-#include <cmath>
+#include <cmath>  //Not recognized in Eclipse
 
 Point::Point(int xVal, int yVal, int zVal)
   {
-      x = xVal;
-      y = yVal;
-      z = zVal;
+    x = xVal;
+    y = yVal;
+    z = zVal;
   }
 
 int Point::getX()
   {
-      return x;
+    return x;
   }
 
 int Point::getY()
   {
-      return y;
+    return y;
   }
 
 int Point::getZ()
   {
-      return z;
+    return z;
   }
 
 double Point::distanceFrom(Point other)
   {
-      int xSquare = this->x - other.x;
-      int ySquare = this->y - other.y;
-      int zSquare = this->z - other.z;
+    int xSquare = this->x - other.x;
+    int ySquare = this->y - other.y;
+    int zSquare = this->z - other.z;
 
-      xSquare *= xSquare;
-      ySquare *= ySquare;
-      zSquare *= zSquare;
+    xSquare *= xSquare;
+    ySquare *= ySquare;
+    zSquare *= zSquare;
 
-      return sqrt(xSquare + ySquare + zSquare);
+    return sqrt(xSquare + ySquare + zSquare); //Not a bug
   }
 
 double distanceBetweenPoints(Point a, Point b)
   {
-      return a.distanceFrom(b);
+    return a.distanceFrom(b);
   }
