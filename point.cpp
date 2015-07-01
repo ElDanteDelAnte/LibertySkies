@@ -1,5 +1,5 @@
 #include "point.h"
-#include <cmath>  //Not recognized in Eclipse
+#include <cmath>
 
 Point::Point(int xVal, int yVal, int zVal)
   {
@@ -33,7 +33,7 @@ double Point::distanceFrom(Point other)
     ySquare *= ySquare;
     zSquare *= zSquare;
 
-    return sqrt(xSquare + ySquare + zSquare); //Not a bug
+    return sqrt(xSquare + ySquare + zSquare);
   }
 
 double distanceBetweenPoints(Point a, Point b)
