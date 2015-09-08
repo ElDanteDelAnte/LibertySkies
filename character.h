@@ -15,12 +15,16 @@
 
  Early stats.
 
- 6/30/15
+ 6/30/15:
  Race is a struct.
  Skill XP is seprate from level.
  Skills and XP in their own structs.
  Early definition of Race.
  gain/get funcs are as templates.
+
+ 7/23/15:
+ Sequence is an int, used to determine order in battle
+ Get() function for sequence.
  */
 
 /* Skills */
@@ -150,6 +154,9 @@ class Character
      * Defined in the associated test driver.*/
     Character();
 
+    Character(std::string name, int orderIndex);            //for combat testing
+    Character(std::string name, int baseSequence, int maxStam);  //for combat testing
+
     /*gainExp() functions*/
     void gainExp_plasma(int exp);
     void gainExp_ballistics(int exp);
@@ -231,12 +238,16 @@ class Character
     int getLv_dark();
     int getLv_psi();
 
-    /* setLv() and set Exp() functions will be with the constructor implementation*/
+    /* setLv() and set Exp() functions will be done with the constructor implementation*/
 
     /* Used to "refresh" the character stats to what they should be based on skills */
     void calcBaseStats();
 
     /* COMBAT-RELATED FUNCTIONS */
+    //turn order
+    void calcInitiative();
+    int sequence;  //to be put in a combat struct
+    int getSequence();
 
     /* getAtributes() functions*/
     std::string getName();
