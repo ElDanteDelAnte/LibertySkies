@@ -2,6 +2,8 @@
 #include <cstring>
 #include <string>
 
+#define DERIVEDSTATFACTOR 5
+
 /**
  Versions:
 
@@ -41,6 +43,9 @@
  holy        (spirit)
  dark        (spirit)
  psi         (spirit)
+
+ 9/21/15
+ Add equip_weapon function
  */
 
 void Character::gainExp_plasma(int exp)
@@ -765,9 +770,9 @@ void Character::calcBaseStats()
     spiritTotal += this->charSkills.psi;
 
     //Set max of each stat to total * 5
-    this->max_hp = hpTotal * 5;
-    this->max_stam = stamTotal * 5;
-    this->max_spirit = spiritTotal * 5;
+    this->max_hp = hpTotal * DERIVEDSTATFACTOR;
+    this->max_stam = stamTotal * DERIVEDSTATFACTOR;
+    this->max_spirit = spiritTotal * DERIVEDSTATFACTOR;
   }
 
 std::string Character::getName()
@@ -800,6 +805,22 @@ int Character::getMaxSpirit()
   {
     return this->max_spirit;
   }
+
+/* ITEM-RELATED FUNCTIONS */
+void Character::equipWeapon(Abstract_Weapon& weap)
+  {
+    this->weapon = weap;
+    weap.becomeEquipped(this);
+  }
+/*
+Abstract_Weapon* Character::unequipWeapon()
+  {
+    Abstract_Weapon& weap = this->weapon;
+    this->weapon = TestWeapon(); //To be defined in the test driver, eventually to become "unarmed"
+    return weap;
+  }
+  */
+/* COMBAT-RELATED FUNCTIONS */
 
 //TODO: get() functions for current hp, stam, and spirit
 //TODO: Character constructor function (Will need to initialize skill lv.s to 1, EXP to 0)

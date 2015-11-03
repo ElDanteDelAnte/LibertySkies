@@ -25,6 +25,9 @@
  7/23/15:
  Sequence is an int, used to determine order in battle
  Get() function for sequence.
+
+ 9/21/15
+ Add weapon member
  */
 
 /* Skills */
@@ -145,6 +148,7 @@ class Character
 
     //inventory
     //equipped weapon
+    Abstract_Weapon* weapon;
     //equipped armor
     //talisman/augment/accessory
     //any other items?
@@ -153,10 +157,10 @@ class Character
     /* Default constructor for testing purposes.
      * Defined in the associated test driver.*/
     Character();
-
+/*
     Character(std::string name, int orderIndex);            //for combat testing
     Character(std::string name, int baseSequence, int maxStam);  //for combat testing
-
+*/
     /*gainExp() functions*/
     void gainExp_plasma(int exp);
     void gainExp_ballistics(int exp);
@@ -249,7 +253,11 @@ class Character
     int sequence;  //to be put in a combat struct
     int getSequence();
 
-    /* getAtributes() functions*/
+    //take damage
+    void damage_hp(int damHP);  //raw damage, no resistance flags
+    //TODO: Make it possible to specify type of damage
+
+    /* getAtributes() FUCNTIONS*/
     std::string getName();
     raceName getRaceName();
     //int getHP();
@@ -258,6 +266,10 @@ class Character
     int getMaxStam();
     //int getSpirit();
     int getMaxSpirit();
+
+    /* ITEM-RELATED FUNCTIONS */
+    void equipWeapon(Abstract_Weapon& weapon);
+    Abstract_Weapon* unequipWeapon();  //if encapsulates adding weapon to inventory, make return void
   };
 
 #endif
