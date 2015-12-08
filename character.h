@@ -4,6 +4,8 @@
 #include <string>
 #include "declarations.h"
 
+class Abstract_Weapon;
+
 /**
  * Base of any creature in the game.
  */
@@ -28,6 +30,9 @@
 
  9/21/15
  Add weapon member
+
+ 11/16/15
+ Implement hp and getHP() members.
  */
 
 /* Skills */
@@ -115,6 +120,8 @@ typedef struct
 
   } race;
 
+
+
 class Character
   {
   private:
@@ -157,10 +164,10 @@ class Character
     /* Default constructor for testing purposes.
      * Defined in the associated test driver.*/
     Character();
-/*
+
     Character(std::string name, int orderIndex);            //for combat testing
-    Character(std::string name, int baseSequence, int maxStam);  //for combat testing
-*/
+//    Character(std::string name, int baseSequence, int maxStam);  //for combat testing
+
     /*gainExp() functions*/
     void gainExp_plasma(int exp);
     void gainExp_ballistics(int exp);
@@ -253,6 +260,8 @@ class Character
     int sequence;  //to be put in a combat struct
     int getSequence();
 
+    Abstract_Weapon* getWeapon();
+
     //take damage
     void damage_hp(int damHP);  //raw damage, no resistance flags
     //TODO: Make it possible to specify type of damage
@@ -260,7 +269,7 @@ class Character
     /* getAtributes() FUCNTIONS*/
     std::string getName();
     raceName getRaceName();
-    //int getHP();
+    int getHP();
     int getMaxHP();
     //int getStam();
     int getMaxStam();
@@ -268,7 +277,7 @@ class Character
     int getMaxSpirit();
 
     /* ITEM-RELATED FUNCTIONS */
-    void equipWeapon(Abstract_Weapon& weapon);
+    void equipWeapon(Abstract_Weapon* weapon);
     Abstract_Weapon* unequipWeapon();  //if encapsulates adding weapon to inventory, make return void
   };
 

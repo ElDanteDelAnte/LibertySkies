@@ -2,6 +2,9 @@
  * 7/23/15:
  * Just the order so far
  * Does not yet account for ties.
+ *
+ * 11/16/15:
+ * Initializes weapon as per constructor requirements.
  */
 
 #include "checkit.h"
@@ -26,6 +29,8 @@ Character::Character()
     this->max_spirit = 0;
     this->sequence = 0;
 
+    this->weapon = NULL;
+
     //std::cout << "Constructing Character, default" << endl;
   }
 
@@ -41,6 +46,8 @@ Character::Character(std::string charName, int orderIndex)
     this->spirit = 0;
     this->max_spirit = 0;
 
+    this->weapon = NULL;
+
     //std::cout << "Constructing Character, 2 parameters" << endl;
   }
 
@@ -55,6 +62,8 @@ Character::Character(std::string charName, int baseSequence, int maxStam)
     this->max_stam = maxStam;
     this->spirit = 0;
     this->max_spirit = 0;
+
+    this->weapon = NULL;
 
     //std::cout << "Constructing Character, 3 parameters" << endl;
   }

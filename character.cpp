@@ -1,3 +1,4 @@
+#include "weaponAbstract.h"
 #include "character.h"
 #include <cstring>
 #include <string>
@@ -46,6 +47,9 @@
 
  9/21/15
  Add equip_weapon function
+
+ 11/16/15
+ Add getHP function.
  */
 
 void Character::gainExp_plasma(int exp)
@@ -785,7 +789,10 @@ raceName Character::getRaceName()
     return this->charRace.racename;
   }
 
-//int Character::getHP()
+int Character::getHP()
+  {
+    return this->hp;
+  }
 
 int Character::getMaxHP()
   {
@@ -807,10 +814,15 @@ int Character::getMaxSpirit()
   }
 
 /* ITEM-RELATED FUNCTIONS */
-void Character::equipWeapon(Abstract_Weapon& weap)
+void Character::equipWeapon(Abstract_Weapon* weap)
   {
     this->weapon = weap;
-    weap.becomeEquipped(this);
+    weap->becomeEquipped(this);
+  }
+
+Abstract_Weapon* Character::getWeapon()
+  {
+    return this->weapon;
   }
 /*
 Abstract_Weapon* Character::unequipWeapon()
@@ -820,6 +832,7 @@ Abstract_Weapon* Character::unequipWeapon()
     return weap;
   }
   */
+
 /* COMBAT-RELATED FUNCTIONS */
 
 //TODO: get() functions for current hp, stam, and spirit

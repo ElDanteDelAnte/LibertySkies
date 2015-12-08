@@ -33,7 +33,7 @@ vector<Character> onFootBattle_sortTurnOrder(vector<Character> unsorted)
 
     //IMPORTANT: the vector is sorted in turn order, with descending sequence values,
     //and those with higher max_stam going before those with lower max_stam for those of equal sequence
-    for (auto &myCharacter : unsorted)
+    for (Character &myCharacter : unsorted)
       {
         //if the character to be sorted has a higher sequence variable than the sorted Character
         //being inspected

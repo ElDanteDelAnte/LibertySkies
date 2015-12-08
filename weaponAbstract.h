@@ -7,7 +7,7 @@
 /*
 Versions:
   9/21/15:
-
+  Weapons can have up to three types, third type being TWOHANDED
 */
 #ifndef WEAPONABSTRACT_H_
 #define WEAPONABSTRACT_H_
@@ -21,6 +21,7 @@ typedef enum
 
 class Abstract_Weapon
   {
+  protected:
     int expEarned;
     Character* weilder;
     WeaponType type1;
@@ -37,16 +38,18 @@ class Abstract_Weapon
         type3 = NOTYPE;
       }
 
-    virtual ~Abstract_Weapon() {};
+    virtual ~Abstract_Weapon();
 
     void becomeEquipped(Character* weild) {this->weilder = weild;}
 
     virtual void attack(Character* target) = 0;
 
-    virtual void rewardExp();
+    virtual void rewardExp() = 0;
 
 
   };
+
+
 
 
 

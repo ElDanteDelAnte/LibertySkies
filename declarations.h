@@ -15,7 +15,6 @@
 //struct race;
 class Character; //Can't forward declare a class?
 
-class Abstract_Weapon;
 
 typedef enum
   {
