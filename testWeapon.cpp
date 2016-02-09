@@ -15,9 +15,7 @@
 
 using namespace std;
 
-Abstract_Weapon::~Abstract_Weapon()
-  {
-  }
+
 
 void testWeaponDamage()
   {

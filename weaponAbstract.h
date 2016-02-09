@@ -13,6 +13,9 @@ Versions:
   TWOHANDED shal be implemented differently
   All weapons will have an "action" that they can use in addition to attacking
   such as cast a spell or block with a shield.
+
+  2/8/16
+  Fixes bug/irregularity with "multiple definition" of virtual destructor.
 */
 //#ifndef WEAPONABSTRACT_H_
 //#define WEAPONABSTRACT_H_
@@ -44,7 +47,7 @@ class Abstract_Weapon
       //type3 = NOTYPE;
       }
 
-    virtual ~Abstract_Weapon();
+    virtual ~Abstract_Weapon() { };
 
     void becomeEquipped(Character* weild) {this->weilder = weild;}
 
@@ -57,8 +60,10 @@ class Abstract_Weapon
 
   };
 
-
-
-
+/*
+Abstract_Weapon::~Abstract_Weapon()
+  {
+  }
+*/
 
 //#endif /* WEAPONABSTRACT_H_ */

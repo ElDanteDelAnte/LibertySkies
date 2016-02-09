@@ -13,6 +13,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include "declarations.h"
 
 class TestWeapon: public Abstract_Weapon
   {
