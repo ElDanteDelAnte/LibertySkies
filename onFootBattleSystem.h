@@ -1,8 +1,8 @@
 #ifndef ONFOOTBATTLESYSTEM_H
 #define ONFOOTBATTLESYSTEM_H
 
-#include <vector>
-#include "character.h"
+//#include <vector>
+//#include "character.h"
 using namespace std;
 //Can this only be stated once?
 

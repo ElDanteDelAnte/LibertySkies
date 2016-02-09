@@ -1,5 +1,19 @@
-#include "point.h"
+//#include "point.h"
 #include <cmath>
+#include "declarations.h"
+
+/**
+ Versions:
+
+ pre-2/8/16
+ constructor
+ get funcs
+ distanceFrom
+ distanceBetween
+
+ 2/8/16
+ now #includes declarations.h instead of point.h
+ */
 
 Point::Point(int xVal, int yVal, int zVal)
   {

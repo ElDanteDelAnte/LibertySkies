@@ -5,16 +5,21 @@
  *
  * 11/16/15:
  * Initializes weapon as per constructor requirements.
+ *
+ * 2/8/12
+ * now #includes declarations.h instead of character.h
+ * still #includes onFootBattleSystem.h" directly (intentional so far)
  */
 
-#include "checkit.h"
-#include "character.h"
-#include "onFootBattleSystem.h"
 #include <vector>
 #include <string>
 #include <string.h>
 #include <stdio.h>
 #include <iostream>
+#include "checkit.h"
+//#include "character.h"
+#include "declarations.h"
+#include "onFootBattleSystem.h"
 
 //dummy constructor
 Character::Character()
@@ -187,17 +192,23 @@ void testDecideOrderWithTies()
         0);
 
     std::cout << "testOrder[0]: " << testOrder[0].getName() << ", sequence: "
-        << testOrder[0].getSequence() << ", max_stam: " << testOrder[0].getMaxStam() << endl;
+        << testOrder[0].getSequence() << ", max_stam: "
+        << testOrder[0].getMaxStam() << endl;
     std::cout << "testOrder[1]: " << testOrder[1].getName() << ", sequence: "
-        << testOrder[1].getSequence() << ", max_stam: " << testOrder[1].getMaxStam() << endl;
+        << testOrder[1].getSequence() << ", max_stam: "
+        << testOrder[1].getMaxStam() << endl;
     std::cout << "testOrder[2]: " << testOrder[2].getName() << ", sequence: "
-        << testOrder[2].getSequence() << ", max_stam: " << testOrder[2].getMaxStam() << endl;
+        << testOrder[2].getSequence() << ", max_stam: "
+        << testOrder[2].getMaxStam() << endl;
     std::cout << "testOrder[3]: " << testOrder[3].getName() << ", sequence: "
-        << testOrder[3].getSequence() << ", max_stam: " << testOrder[3].getMaxStam() << endl;
+        << testOrder[3].getSequence() << ", max_stam: "
+        << testOrder[3].getMaxStam() << endl;
     std::cout << "testOrder[4]: " << testOrder[4].getName() << ", sequence: "
-        << testOrder[4].getSequence() << ", max_stam: " << testOrder[4].getMaxStam() << endl;
+        << testOrder[4].getSequence() << ", max_stam: "
+        << testOrder[4].getMaxStam() << endl;
     std::cout << "testOrder[5]: " << testOrder[5].getName() << ", sequence: "
-        << testOrder[5].getSequence() << ", max_stam: " << testOrder[5].getMaxStam() << endl;
+        << testOrder[5].getSequence() << ", max_stam: "
+        << testOrder[5].getMaxStam() << endl;
 
   }
 

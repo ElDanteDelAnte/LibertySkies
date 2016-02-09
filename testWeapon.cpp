@@ -5,13 +5,19 @@
  *      Author: eldante
  */
 
+#include <stdio.h>
+#include <string>
+#include <cstring>
+#include <iostream>
+#include "declarations.h"
 #include "testWeapon.h"
 #include "checkit.h"
-#include <stdio.h>
 
 using namespace std;
 
-Abstract_Weapon::~Abstract_Weapon() {}
+Abstract_Weapon::~Abstract_Weapon()
+  {
+  }
 
 void testWeaponDamage()
   {
@@ -40,11 +46,33 @@ void testWeaponDamage()
     checkit_int(testCharacter3.getMaxHP(), 20);
   }
 
+void testWeaponReEequip()
+  {
+    Character testCharacter1 = Character("Sally", 6);
+    Character testCharacter3 = Character("Snake", 4);
+
+    string testName1 = "Sally";
+    string testName3 = "Snake";
+
+    TestWeapon weap1 = TestWeapon();
+    TestWeapon weap3 = TestWeapon();
+
+    testCharacter1.equipWeapon(&weap1);
+    testCharacter3.equipWeapon(&weap3);
+
+    testCharacter1.equipWeapon(&weap3);
+    testCharacter3.equipWeapon(&weap1);
+
+    checkit_int(strcmp(weap1.getCharName().c_str(), testName3.c_str()), 0);
+    checkit_int(strcmp(weap3.getCharName().c_str(), testName1.c_str()), 0);
+  }
+
 int main()
   {
-    testWeaponDamage();
+    //testWeaponDamage();
+
+    testWeaponReEequip();
 
     return 0;
   }
-
 

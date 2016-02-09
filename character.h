@@ -1,10 +1,8 @@
-#ifndef CHARACTER_H
-#define CHARACTER_H
+//#ifndef CHARACTER_H
+//#define CHARACTER_H
 
-#include <string>
-#include "declarations.h"
-
-class Abstract_Weapon;
+//#include <string>
+//#include "declarations.h"
 
 /**
  * Base of any creature in the game.
@@ -33,9 +31,22 @@ class Abstract_Weapon;
 
  11/16/15
  Implement hp and getHP() members.
+
+ 1/31/16
+ Adds virtual selectTarget_attack() function.
+
+ 2/8/16
+ Brings in enum raceName from declarations.h
+ Removes security definers, now only #included from declarations.h
  */
 
 /* Skills */
+
+typedef enum
+  {
+  HUMAN
+  } raceName;
+
 typedef struct
   {
     int plasma;        //hp
@@ -119,8 +130,6 @@ typedef struct
     double mod_spirit;
 
   } race;
-
-
 
 class Character
   {
@@ -262,9 +271,10 @@ class Character
 
     Abstract_Weapon* getWeapon();
 
+    //virtual Character* selectTarget_attack();
+
     //take damage
     void damage_hp(int damHP);  //raw damage, no resistance flags
-    //TODO: Make it possible to specify type of damage
 
     /* getAtributes() FUCNTIONS*/
     std::string getName();
@@ -281,4 +291,4 @@ class Character
     Abstract_Weapon* unequipWeapon();  //if encapsulates adding weapon to inventory, make return void
   };
 
-#endif
+//#endif

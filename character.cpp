@@ -1,7 +1,8 @@
-#include "weaponAbstract.h"
-#include "character.h"
+//#include "weaponAbstract.h"
+//#include "character.h"
 #include <cstring>
 #include <string>
+#include "declarations.h"
 
 #define DERIVEDSTATFACTOR 5
 
@@ -50,6 +51,9 @@
 
  11/16/15
  Add getHP function.
+
+ 2/8/16
+ now #includes declarations.h instead of character.h
  */
 
 void Character::gainExp_plasma(int exp)
@@ -825,13 +829,13 @@ Abstract_Weapon* Character::getWeapon()
     return this->weapon;
   }
 /*
-Abstract_Weapon* Character::unequipWeapon()
-  {
-    Abstract_Weapon& weap = this->weapon;
-    this->weapon = TestWeapon(); //To be defined in the test driver, eventually to become "unarmed"
-    return weap;
-  }
-  */
+ Abstract_Weapon* Character::unequipWeapon()
+ {
+ Abstract_Weapon& weap = this->weapon;
+ this->weapon = TestWeapon(); //To be defined in the test driver, eventually to become "unarmed"
+ return weap;
+ }
+ */
 
 /* COMBAT-RELATED FUNCTIONS */
 

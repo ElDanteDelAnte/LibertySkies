@@ -8,7 +8,7 @@
 #ifndef TESTWEAPON_H_
 #define TESTWEAPON_H_
 
-#include "weaponAbstract.h"
+//#include "weaponAbstract.h"
 #include <cstring>
 #include <string>
 #include <stdio.h>
@@ -17,7 +17,8 @@
 class TestWeapon: public Abstract_Weapon
   {
   public:
-    TestWeapon() : Abstract_Weapon()
+    TestWeapon() :
+        Abstract_Weapon()
       {
         this->type1 = PISTOL;
         this->type2 = BALLISTIC;
@@ -33,7 +34,13 @@ class TestWeapon: public Abstract_Weapon
     void attack(Character* target)
       {
         target->damage_hp(10);
-        std::cout << weilder->getName() << " attacks " << target->getName() << " for 10 damage." << std::endl;
+        std::cout << weilder->getName() << " attacks " << target->getName()
+            << " for 10 damage." << std::endl;
+      }
+
+    std::string getCharName()
+      {
+        return weilder->getName();
       }
 
   };

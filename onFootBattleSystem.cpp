@@ -1,6 +1,6 @@
-#include "onFootBattleSystem.h"
 #include <iostream>
 #include <vector>
+#include "onFootBattleSystem.h"
 using namespace std;
 
 /**
@@ -9,8 +9,7 @@ using namespace std;
 /*
  Versions:
 
- 9/07/15:
-
+ 9/07/15
  Enemies added before allies.
  Sequence is an int, no randomness factor yet.
  sortTurnOrder is N*Log(N) (?) efficient and home-made
