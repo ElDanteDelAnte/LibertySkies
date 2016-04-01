@@ -16,44 +16,48 @@ Versions:
 
   2/8/16
   Fixes bug/irregularity with "multiple definition" of virtual destructor.
+
+  3/29/16
+  Removes pure virtual functions that were getting in the way of
+  Character_Abstract's natural weapon. (This is in the hopes that a Character's
+  race can be determined by enums. At least one function in Abstract_Weapon
+  should be pure virtual, but hopefully we can add one later that won't cause
+  problems.)
+  Removes weaponType enum.
+  Removes weaponType fields.
 */
+
 //#ifndef WEAPONABSTRACT_H_
 //#define WEAPONABSTRACT_H_
 
 //#include "character.h"
 //#include <string>
 
-typedef enum
-  {
-    NOTYPE, UNARMED, PISTOL, RIFLE, BALLISTIC, PLASMA, BLADE, BLUNT, //TWOHANDED
-  } WeaponType;
+
 
 class Abstract_Weapon
   {
   protected:
     int expEarned;
-    Character* weilder;
-    WeaponType type1;
-    WeaponType type2;
-  //WeaponType type3;
+    Abstract_Character* weilder;
+
+
 
   public:
     Abstract_Weapon()
       {
         expEarned = 0;
         weilder = 0;     //null
-        type1 = NOTYPE;
-        type2 = NOTYPE;
-      //type3 = NOTYPE;
+
       }
 
     virtual ~Abstract_Weapon() { };
 
     void becomeEquipped(Character* weild) {this->weilder = weild;}
 
-    virtual void attack(Character* target) = 0;
+    virtual void attack(Character* target);
 
-    virtual void rewardExp() = 0;
+    virtual void rewardExp();
 
     //virtual void action() = 0;
 

@@ -5,6 +5,13 @@
  *      Author: eldante
  */
 
+
+/**
+ * 3/7/16
+ * Depreciated.
+ */
+
+
 #ifndef TESTWEAPON_H_
 #define TESTWEAPON_H_
 
@@ -21,34 +28,41 @@ class TestWeapon: public Abstract_Weapon
     TestWeapon() :
         Abstract_Weapon()
       {
+        /*
         this->type1 = PISTOL;
         this->type2 = BALLISTIC;
+        */
       }
 
     void rewardExp()
       {
+        /*
         weilder->gainExp_pistols(expEarned);
         weilder->gainExp_ballistics(expEarned);
         expEarned = 0;
+        */
       }
 
     void attack(Character* target)
       {
+        /*
         target->damage_hp(10);
         std::cout << weilder->getName() << " attacks " << target->getName()
             << " for 10 damage." << std::endl;
+        */
       }
 
     std::string getCharName()
       {
-        return weilder->getName();
+        //return weilder->getName();
+        return "dummy";
       }
 
   };
 
 void Character::damage_hp(int damHP)
   {
-    this->hp -= damHP;
+    //this->hp -= damHP;
   }
 
 Character::Character()

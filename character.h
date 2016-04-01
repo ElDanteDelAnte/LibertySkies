@@ -38,6 +38,10 @@
  2/8/16
  Brings in enum raceName from declarations.h
  Removes security definers, now only #included from declarations.h
+
+ 3/7/16
+ Depreciated.
+ This file is now replaced with characterAbstract.h
  */
 
 /* Skills */
